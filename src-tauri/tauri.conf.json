@@ -1,0 +1,72 @@
+{
+  "build": {
+    "beforeBuildCommand": "yarn run webpack build",
+    "beforeDevCommand": "yarn run webpack serve",
+    "devPath": "http://localhost:8080",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "caster-tool",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "path": { "all": true },
+      "protocol": {
+        "asset": true,
+        "assetScope": ["$RESOURCE/**"]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "category": "DeveloperTool",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "resources": ["ddragon/*"],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "io.matrixstudios.caster-tool",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "timestampUrl": ""
+      }
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fileDropEnabled": false,
+        "center": true,
+        "fullscreen": false,
+        "height": 800,
+        "resizable": true,
+        "title": "Caster Tool",
+        "width": 1200
+      }
+    ]
+  }
+}
